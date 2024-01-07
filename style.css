@@ -2,7 +2,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #f9f5f0;
 }
 .sticky-navbar {
   background-color: #fef7e2;
@@ -256,24 +255,17 @@ body.padding-for-nav {
   cursor: pointer;
 }
   
-  /* Odpowiednia responsywność dla galerii */
-@media (max-width: 768px) {
-  .gallery-images img {
-    width: calc(50% - 20px);
-  }
-}
-  
     /* Odpowiednia responsywność dla formularza kontaktowego */
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
   .contact form {
     width: 90%;
-    }
+  }
 }
   
     /* Dodatkowe poprawki responsywności */
-  @media (max-width: 1024px) {
+@media (max-width: 1024px) {
   .article {
     width: calc(50% - 30px);
-    }
   }
+}
   
