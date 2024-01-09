@@ -20,7 +20,7 @@ nav {
   
 nav a {
   text-decoration: none;
-  font-family: Bookman, URW Bookman L, serif;
+  font-family: "Lucida Console", "Courier New", monospace;
   font-size: x-large;
   font-weight: bolder;
   color: #11161b;
@@ -36,7 +36,7 @@ nav li {
   padding: 0 10px;
 }
 .logo img{
-  width: 8ch;
+  width: 6.5ch;
 }
 .nav-right {
   display: flex;
@@ -49,6 +49,7 @@ body.padding-for-nav {
   background-image: url('Media/BCG_Home.png');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed; /* efekt paralaksy */
   position: relative;
   color: #11161b;
   padding: 100px 0px;
