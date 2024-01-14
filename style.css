@@ -166,7 +166,7 @@ body.padding-for-nav {
 
 .review-image-container {
   flex: 1; 
-  margin-right: 20px; 
+  margin-right: 20px;
 }
 
 .review img {
@@ -175,8 +175,8 @@ body.padding-for-nav {
 }
 
 .review-text {
-  flex: 2;
-  text-align: left; 
+  flex: 2; /* Tekst zajmuje dostępną przestrzeń na prawo od obrazu */
+  text-align: left; /* Wyśrodkowanie tekstu w lewej części */
 }
 
 .review-text p {
