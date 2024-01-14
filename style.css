@@ -45,8 +45,13 @@ nav li {
 body.padding-for-nav {
   padding-top: 80px;
 }
-.hero {
+.hero{
   background-image: url('Media/BCG_Home.png');
+}
+.hero-gallery {
+  background-image: url('Media/kociaKawiarnia.png');
+}
+.hero, .hero-gallery{
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* efekt paralaksy */
@@ -55,7 +60,7 @@ body.padding-for-nav {
   padding: 100px 0px;
   text-align: center;
 }
-.hero:before {
+.hero:before, .hero-gallery:before{
   content: '';
   display: block;
   position: absolute;
@@ -71,7 +76,11 @@ body.padding-for-nav {
   position: relative;
   z-index: 2;
 }
-.hero h1 {
+.hero-gallery > * {
+  position: relative;
+  z-index: 2;
+}
+.hero, .hero-gallery h1 {
   font-size: 48px;
   margin: 0;
 }
@@ -82,15 +91,18 @@ body.padding-for-nav {
   font-size: 20px;
   line-height: 1.6;
 }
-.articles {
+/* Your additional styles */
+.articles, .last-photos {
   padding: 2% 1% 8% 1%;
   background-color: #48534c;
   color: #fef7e2;
 }
-.articles h2 {
+
+.articles, .last-photos h2 {
   font-size: 36px;
   text-align: center;
 }
+
 .articles-image {
   display: flex;
   flex-wrap: wrap;
@@ -157,7 +169,7 @@ body.padding-for-nav {
 
 .review-image-container {
   flex: 1; 
-  margin-right: 20px;
+  margin-right: 20px; 
 }
 
 .review img {
@@ -252,4 +264,91 @@ body.padding-for-nav {
     width: calc(50% - 30px);
   }
 }
-  
+/* General Styles for the 'last-photos' section */
+.last-photos {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Carousel container styles */
+.carousel {
+  position: relative;
+  max-width: 400px;
+  height: 400px;
+  max-height: 100vh;
+  margin: 20px auto;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Styles for each carousel item */
+.carousel__item {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: center no-repeat;
+  background-size: contain;
+  transition: left 0.5s, transform 0.5s;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Styles for the navigation arrows */
+.carousel__arrow {
+  display: none;
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  transform: translateY(-50%);
+  opacity: 0.7;
+  color: #fff;
+  background-color: #999;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 28px;
+  line-height: 39px;
+  font-weight: bold;
+}
+
+/* Hide the radio buttons */
+input[type="radio"] {
+  display: none;
+}
+
+/* Show the carousel item when its corresponding radio button is checked */
+input:checked + div .carousel__item {
+  display: block;
+}
+
+/* Position and scale transformations for the carousel items */
+input:checked + div .carousel__item {
+  left: -100%;
+  transform: scale(0.4);
+}
+input:checked + div + input + div .carousel__item {
+  left: 0;
+  transform: scale(1);
+}
+input:checked + div + input + div + input + div .carousel__item {
+  left: 100%;
+  transform: scale(0.4);
+}
+
+/* Positioning the navigation arrows */
+input:checked + div .carousel__arrow {
+  left: 10px;
+}
+input:checked + div + input + div + input + div .carousel__arrow {
+  right: 10px;
+}
+
+/* Arrow symbols */
+input:checked + div .carousel__arrow:before {
+  content: '❰';
+}
+input:checked + div + input + div + input + div .carousel__arrow:before {
+  content: '❱';
+}

@@ -20,33 +20,34 @@
       </nav>
     </header>
     <main>
-      <section id="hero" class="hero">
-        <h1>Witaj na Blogu o Kawie</h1>
-        <img src="Media/logoNorthCoffee.png" alt="logo">
-        <p>Poznaj najlepsze przepisy i ciekawostki ze świata kawy</p>
+      <section id="hero" class="hero-gallery">
+        <h1>Galeria</h1>
       </section>
 
-      <article id="articles" class="articles">
-        <h2>Najnowsze wpisy</h2>
-        <div class="articles-image">
-          <div class="articles-image-container">
-            <img src="Media/Art1.png" alt="art1">
-            <a href=""><span class="article-title">Czy (nie)warto dodawać mleka do kawy?</span></a>
-          </div>
-          <div class="articles-image-container">
-            <img src="Media/Art2.png" alt="art2">
-            <a href=""><span class="article-title">Dlaczego powinieneś pić kawę?</span></a>
-          </div>
-          <div class="articles-image-container">
-            <img src="Media/Art3.png" alt="art3">
-            <a href=""><span class="article-title">O której porze pić kawę?</span></a>
-          </div>
-          <div class="articles-image-container">
-            <img src="Media/Art4.png" alt="art4">
-            <a href=""><span class="article-title">Jak kawa wpływa na nasz orgaznim?</span></a>
-          </div>
+      <section class="last-photos">
+        <h2>Ostatnie zdjęcia</h2>
+    
+        <div class="carousel">
+            <input type="radio" id="photo0" name="carousel" checked="checked"/>
+            <div>
+                <label class="carousel__arrow" for="photo4"></label>
+                <div class="carousel__item" style="background-image: url('Media/Art1.png')"><img src="Media/Art1.png" alt=""></div>
+            </div>
+    
+            <input type="radio" id="photo1" name="carousel"/>
+            <div>
+                <label class="carousel__arrow" for="photo0"></label>
+                <div class="carousel__item" style="background-image: url('Media/Art2.png')"><img src="Media/Art1.png" alt=""></div>
+            </div>
+    
+            <input type="radio" id="photo4" name="carousel"/>
+            <div>
+                <label class="carousel__arrow" for="photo3"></label>
+                <div class="carousel__item" style="background-image: url('Media/Art3.png')"><img src="Media/Art1.png" alt=""></div>
+            </div>
         </div>
-      </article>
+    </section>
+    
 
       <section class="review">
         <h2>Ostatnio odwiedzone kawiarnie</h2>
