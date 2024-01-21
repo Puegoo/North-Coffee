@@ -46,12 +46,7 @@ body.padding-for-nav {
   padding-top: 80px;
 }
 .hero{
-  background-image: url('Media/BCG_Home.png');
-}
-.hero-gallery {
-  background-image: url('Media/kociaKawiarnia.png');
-}
-.hero, .hero-gallery{
+  background-image: url('Media/Backgrounds/BCG_Home.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* efekt paralaksy */
@@ -60,7 +55,7 @@ body.padding-for-nav {
   padding: 100px 0px;
   text-align: center;
 }
-.hero:before, .hero-gallery:before{
+.hero:before{
   content: '';
   display: block;
   position: absolute;
@@ -76,11 +71,8 @@ body.padding-for-nav {
   position: relative;
   z-index: 2;
 }
-.hero-gallery > * {
-  position: relative;
-  z-index: 2;
-}
-.hero, .hero-gallery h1 {
+
+.hero h1 {
   font-size: 48px;
   margin: 0;
 }
@@ -92,13 +84,13 @@ body.padding-for-nav {
   line-height: 1.6;
 }
 /* Your additional styles */
-.articles, .last-photos {
+.articles {
   padding: 2% 1% 8% 1%;
   background-color: #48534c;
   color: #fef7e2;
 }
 
-.articles, .last-photos h2 {
+.articles h2 {
   font-size: 36px;
   text-align: center;
 }
@@ -264,15 +256,62 @@ body.padding-for-nav {
     width: calc(50% - 30px);
   }
 }
-/* General Styles for the 'last-photos' section */
-.last-photos {
+
+
+/* --------------------gallery.html-------------------- */
+
+.hero-gallery{
+  background-image: url('Media/Backgrounds/kociaKawiarnia.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* efekt paralaksy */
+  position: relative;
+  color: #11161b;
+  padding: 100px 0px;
   text-align: center;
-  margin-bottom: 20px;
 }
 
-/* Carousel container styles */
-.carousel {
+.hero-gallery:before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fef7e2;
+  opacity: 0.7;
+  z-index: 1;
+}
+.hero-gallery > * {
   position: relative;
+  z-index: 2;
+}
+.hero-gallery h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.last-photos-carousel, .carusel-label{
+  padding: 2% 1% 8% 1%;
+  background-color: #48534c;
+  position: relative;
+}
+.carusel-label {
+  font-size: 36px;
+  text-align: center;
+  color: #fef7e2;
+  padding-bottom: 60px;
+}
+
+.carusel > input{
+  display: none;
+}
+.carusel-label{
+  margin: 0%;
+  height: 0px;
+}
+.carusel{
   max-width: 400px;
   height: 400px;
   max-height: 100vh;
@@ -281,9 +320,8 @@ body.padding-for-nav {
   user-select: none;
 }
 
-/* Styles for each carousel item */
-.carousel__item {
-  position: absolute;
+.carusel__item {
+  position: absolute; 
   z-index: 1;
   top: 0;
   display: none;
@@ -296,8 +334,7 @@ body.padding-for-nav {
   backface-visibility: hidden;
 }
 
-/* Styles for the navigation arrows */
-.carousel__arrow {
+.carusel__arrow {
   display: none;
   position: absolute;
   top: 50%;
@@ -307,48 +344,86 @@ body.padding-for-nav {
   color: #fff;
   background-color: #999;
   cursor: pointer;
-  padding: 10px;
+  padding: 10px; 
   font-size: 28px;
   line-height: 39px;
   font-weight: bold;
 }
 
-/* Hide the radio buttons */
-input[type="radio"] {
-  display: none;
+
+input:checked+div~div~div~div .carusel__item {background-image: none !important;}
+input:checked+div *, input:checked+div+input+div .carusel__item, input:checked+div+input+div+input+div * {display: block;}
+
+input:checked+div .carusel__item {left: -100%; transform: scale(0.4);}
+input:checked+div+input+div .carusel__item {left: 0; transform: scale(1);}
+input:checked+div+input+div+input+div .carusel__item {left: 100%; transform: scale(0.4);}
+
+input:checked+div .carusel__arrow {left: 0;}
+input:checked+div+input+div+input+div .carusel__arrow {right: 0;}
+
+input:checked+div .carusel__arrow:before {content: '❰';}
+input:checked+div+input+div+input+div .carusel__arrow:before{content: '❱';}
+
+.collections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4% 1% 5% 1%;
+  background-color: #fef7e2;
 }
 
-/* Show the carousel item when its corresponding radio button is checked */
-input:checked + div .carousel__item {
-  display: block;
+.collections-header h2 {
+  font-size: 36px;
+  text-align: center;
+  margin: 0 0 20px 0;
 }
 
-/* Position and scale transformations for the carousel items */
-input:checked + div .carousel__item {
-  left: -100%;
-  transform: scale(0.4);
+.images-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
 }
-input:checked + div + input + div .carousel__item {
+
+.images-wrapper-coll {
+  perspective: 1000px;
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 0 10px;
+}
+
+.images-wrapper-coll img {
+  transition: transform 0.7s ease, z-index 0.7s linear;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
   left: 0;
-  transform: scale(1);
-}
-input:checked + div + input + div + input + div .carousel__item {
-  left: 100%;
-  transform: scale(0.4);
-}
-
-/* Positioning the navigation arrows */
-input:checked + div .carousel__arrow {
-  left: 10px;
-}
-input:checked + div + input + div + input + div .carousel__arrow {
-  right: 10px;
+  transform: rotateY(0deg) translateZ(0);
+  transform-origin: center center;
+  backface-visibility: hidden;
+  object-fit: cover;
+  z-index: 1;
 }
 
-/* Arrow symbols */
-input:checked + div .carousel__arrow:before {
-  content: '❰';
+.images-wrapper-coll:hover img:nth-of-type(1) {
+  transform: rotateY(15deg) translateZ(60px) translateY(-15px) translateX(-10px);
+  z-index: 1;
 }
-input:checked + div + input + div + input + div .carousel__arrow:before {
-  content: '❱';
+
+.images-wrapper-coll:hover img:nth-of-type(2) {
+  transform: rotateY(15deg) translateZ(120px) translateY(-30px);
+  z-index: 2;
 }
+
+.images-wrapper-coll:hover img:nth-of-type(3) {
+  transform: rotateY(15deg) translateZ(180px) translateY(-45px) translateX(10px);
+  z-index: 3;
+}
+
+
+/* --------------------contact.html-------------------- */
+
