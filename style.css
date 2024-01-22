@@ -83,7 +83,7 @@ body.padding-for-nav {
   font-size: 2.6vh;
   line-height: 1.6;
 }
-/* Your additional styles */
+
 .articles {
   padding: 2% 1% 8% 1%;
   background-color: #48534c;
@@ -375,7 +375,7 @@ input:checked+div+input+div+input+div .carusel__arrow:before{content: '❱';}
 .collections-header h2 {
   font-size: 36px;
   text-align: center;
-  margin: 0 0 20px 0;
+  margin: 0 0 30% 0;
 }
 
 .images-wrapper {
@@ -426,4 +426,79 @@ input:checked+div+input+div+input+div .carusel__arrow:before{content: '❱';}
 
 
 /* --------------------contact.html-------------------- */
+.hero-contact{
+  background-image: url('Media/Backgrounds/kontaktcoffee.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* efekt paralaksy */
+  position: relative;
+  color: #11161b;
+  padding: 100px 0px;
+  text-align: center;
+}
+.hero-contact:before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fef7e2;
+  opacity: 0.7;
+  z-index: 1;
+}
+.hero-contact > * {
+  position: relative;
+  z-index: 2;
+}
 
+.hero-contact h1 {
+  font-size: 48px;
+  margin: 0;
+}
+.ourplace {
+  padding: 2% 0% 8% 5%;
+  background-color: #48534c;
+  color: #fef7e2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: larger;
+}
+.ourplace h2 {
+  font-size: 36px;
+  text-align: center;
+}
+
+.ourplace .content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.ourplace .logo, .ourplace .map {
+  flex: 1; /* Dzieli dostępną przestrzeń równomiernie między logo i mapę */
+}
+
+.ourplace .logo img {
+  width: 20%; /* Ogranicza wielkość logo */
+  height: auto; /* Zachowuje proporcje obrazu */
+}
+
+/* Opcjonalnie, możesz dodać dodatkowe style dla mapy, jeśli jest to potrzebne */
+.ourplace .map iframe {
+  max-width: 80%;
+  max-height: 100%;
+}
+.form-group{
+  font-size: large;
+  margin-bottom: 20px;
+}
+#form-group-sex{
+  text-align: left;
+}
+.form-group input[type="radio"]{
+  cursor: pointer;
+}
