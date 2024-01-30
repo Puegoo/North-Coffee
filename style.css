@@ -509,7 +509,6 @@ input:checked+div+input+div+input+div .carusel__arrow:before{content: '❱';}
   height: auto; /* Zachowuje proporcje obrazu */
 }
 
-/* Opcjonalnie, możesz dodać dodatkowe style dla mapy, jeśli jest to potrzebne */
 .ourplace .map iframe {
   max-width: 80%;
   max-height: 100%;
@@ -525,7 +524,7 @@ input:checked+div+input+div+input+div .carusel__arrow:before{content: '❱';}
   cursor: pointer;
 }
 
-@media (max-width: 766px) {
+@media (max-width: 986px) {
   nav ul {
     display: none;
   }
@@ -564,7 +563,7 @@ input:checked+div+input+div+input+div .carusel__arrow:before{content: '❱';}
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
   body {
     font-size: 14px;
   }
