@@ -126,18 +126,13 @@ body.padding-for-nav {
   color: white;
   font-weight: bold;
   text-align: center;
-  font-size: 2.2vw;
+  font-size: 150%;
 }
 
 .articles-image-container:hover .article-title {
   display: block;
 }
 
-@media (max-width: 768px) {
-  .articles-image-container {
-    width: calc(50% - 20px);
-  }
-}
 .review {
   display: flex;
   flex-direction: column;
@@ -171,18 +166,18 @@ body.padding-for-nav {
 
 .review-text {
   flex: 2; /* Tekst zajmuje dostępną przestrzeń na prawo od obrazu */
-  text-align: left; /* Wyśrodkowanie tekstu w lewej części */
+  text-align: left;
 }
 
 .review-text p {
   text-align: center;
 }
 .review-text p:first-of-type{
-  font-size: 1.4vw;
+  font-size: 1.2em;
   font-style: italic;
 }
 .review-text p:last-of-type{
-  font-size: 1.6vw;
+  font-size: 1.3em;
 }
 
 .footer-at-bottom {
@@ -241,20 +236,6 @@ body.padding-for-nav {
   color: white;
   border: none;
   cursor: pointer;
-}
-  
-    /* Odpowiednia responsywność dla formularza kontaktowego */
-@media (max-width: 768px) {
-  .contact form {
-    width: 90%;
-  }
-}
-  
-    /* Dodatkowe poprawki responsywności */
-@media (max-width: 1024px) {
-  .article {
-    width: calc(50% - 30px);
-  }
 }
 
 
@@ -524,7 +505,7 @@ input:checked+div+input+div+input+div .carusel__arrow:before{content: '❱';}
 }
 
 .ourplace .logo img {
-  width: 20%; /* Ogranicza wielkość logo */
+  width: 120px; /* Ogranicza wielkość logo */
   height: auto; /* Zachowuje proporcje obrazu */
 }
 
@@ -542,4 +523,79 @@ input:checked+div+input+div+input+div .carusel__arrow:before{content: '❱';}
 }
 .form-group input[type="radio"]{
   cursor: pointer;
+}
+
+@media (max-width: 966px) {
+  nav ul {
+    display: none;
+  }
+  .nav-right {
+    flex-direction: column;
+  }
+  .logo img {
+    width: 100px;
+  }
+  .hero h1, .hero-gallery h1, .hero-contact h1 {
+    font-size: 5vw;
+  }
+  .articles-image-container, .review-content{
+    flex-direction: column;
+  }
+  .articles-image-container{
+    width: calc(50% - 20px);
+  }
+  .review-image-container, .review-text {
+    width: 100%;
+  }
+  .footer-at-bottom img {
+    width: 10vw;
+  }
+  .about img, .ourplace .logo img {
+    max-width: 50%;
+  }
+  .contact form {
+    width: 90%;
+  }
+  .carusel {
+    max-width: 100%;
+  }
+  .images-wrapper{
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  .nav-menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+  .nav-menu-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s;
+    background-color: #333;
+  }
+  .nav-menu-icon.active span:nth-of-type(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .nav-menu-icon.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+  .nav-menu-icon.active span:nth-of-type(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  nav ul.collapsed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+  nav ul.collapsed li {
+    margin-bottom: 10px;
+  }
 }
