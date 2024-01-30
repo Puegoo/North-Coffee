@@ -525,7 +525,7 @@ input:checked+div+input+div+input+div .carusel__arrow:before{content: '❱';}
   cursor: pointer;
 }
 
-@media (max-width: 966px) {
+@media (max-width: 766px) {
   nav ul {
     display: none;
   }
@@ -564,7 +564,7 @@ input:checked+div+input+div+input+div .carusel__arrow:before{content: '❱';}
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 380px) {
   body {
     font-size: 14px;
   }
