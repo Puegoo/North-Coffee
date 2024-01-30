@@ -77,7 +77,8 @@ body.padding-for-nav {
   margin: 0;
 }
 .hero img {
-  width: 12%;
+  width: 8em;
+  
 }
 .hero p {
   font-size: 2.6vh;
