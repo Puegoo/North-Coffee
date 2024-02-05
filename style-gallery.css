@@ -1,7 +1,10 @@
-body {
+  body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     overflow-x: hidden;
   }
   
@@ -51,6 +54,10 @@ body {
   
   body.padding-for-nav {
     padding-top: 80px;
+  }
+
+  main {
+    flex: 1;
   }
   
   .hero-gallery{
@@ -157,6 +164,38 @@ body {
   input:checked+div .carusel__arrow:before {content: '❰';}
   input:checked+div+input+div+input+div .carusel__arrow:before{content: '❱';}
   
+  .tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .tabs input {
+    display: none;
+  }
+  
+  .tabs label {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #fef7e2;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .tab-content {
+    display: none;
+  }
+  
+  .tabs input:checked + label {
+    background-color: #48534c;
+    color: #fef7e2;
+  }
+  
+  .tabs input:checked + label + .tab-content {
+    display: block;
+  }
+
   .collections {
     display: flex;
     flex-direction: column;
@@ -269,6 +308,7 @@ body {
     color: #3c3c3b;
     padding: 20px;
     text-align: center;
+    margin-top: auto;
   }
   
   .footer-at-bottom img{
@@ -282,9 +322,6 @@ body {
     }
     .logo img {
       width: 100px;
-    }
-    .footer-at-bottom img {
-      width: 10vw;
     }
     .collections-header h2 {
       margin: 0 0 20% 0;

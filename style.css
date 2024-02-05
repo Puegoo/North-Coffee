@@ -2,6 +2,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 .sticky-navbar {
   background-color: #fef7e2;
@@ -44,6 +47,11 @@ nav li {
 body.padding-for-nav {
   padding-top: 80px;
 }
+
+main {
+  flex: 1;
+}
+
 .hero{
   background-image: url('Media/Backgrounds/BCG_Home.png');
   background-size: cover;
@@ -182,6 +190,7 @@ body.padding-for-nav {
   color: #3c3c3b;
   padding: 20px;
   text-align: center;
+  margin-top: auto;
 }
 .footer-at-bottom img{
   width: 3em;
@@ -232,7 +241,6 @@ body.padding-for-nav {
   border: none;
   cursor: pointer;
 }
-
 
 .popup-checkbox {
   display: none;
