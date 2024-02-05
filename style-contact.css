@@ -1,0 +1,187 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .sticky-navbar {
+    background-color: #fef7e2;
+    box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: x-large;
+    font-weight: bolder;
+    color: #11161b;
+    padding: 1px 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    padding: 0 10px;
+  }
+  
+  .logo img{
+    width: 6.5ch;
+  }
+  
+  .nav-right {
+    display: flex;
+  }
+
+  body.padding-for-nav {
+    padding-top: 80px;
+  }
+  
+  .hero-contact{
+    background-image: url('Media/Backgrounds/kontaktcoffee.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    color: #11161b;
+    padding: 100px 0px;
+    text-align: center;
+  }
+  
+  .hero-contact:before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fef7e2;
+    opacity: 0.7;
+    z-index: 1;
+  }
+  .hero-contact > * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .hero-contact h1 {
+    font-size: 48px;
+    margin: 0;
+  }
+  
+  .ourplace {
+    padding: 2% 0% 8% 5%;
+    background-color: #48534c;
+    color: #fef7e2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: larger;
+  }
+  
+  .ourplace h2 {
+    font-size: 36px;
+    text-align: center;
+  }
+  
+  .ourplace .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .ourplace .logo, .ourplace .map {
+    flex: 1;
+  }
+  
+  .ourplace .logo img {
+    width: 120px;
+    height: auto;
+  }
+  
+  .ourplace .map iframe {
+    max-width: 80%;
+    max-height: 100%;
+  }
+  
+  .contact {
+    background: #f5f5f5;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .contact form {
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  .contact input, .contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .contact button {
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .footer-at-bottom {
+    background-color: #fff5e6; 
+    color: #3c3c3b;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-at-bottom img{
+    width: 3em;
+    margin-right: 20px;
+  }
+  
+  @media (max-width: 966px) {
+    .nav-right {
+      flex-direction: column;
+    }
+    .logo img {
+      width: 100px;
+    }
+    .footer-at-bottom img {
+      width: 10vw;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body {
+      font-size: 14px;
+    }
+    .contact form {
+      width: 90%;
+    }
+  }
+  
