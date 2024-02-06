@@ -248,6 +248,9 @@
     .articles-image-container{
       width: calc(50% - 20px);
     }
+    .guestbook{
+      padding-right: 12%;
+    }
   }
   
   @media (max-width: 480px) {
