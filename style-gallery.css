@@ -317,6 +317,9 @@
   }
   
   @media (max-width: 966px) {
+    body{
+      overflow-x: hidden;
+    }
     .nav-right {
       flex-direction: column;
     }
@@ -334,6 +337,7 @@
   @media (max-width: 480px) {
     body {
       font-size: 14px;
+      overflow-x: hidden;
     }
     .footer-at-bottom img {
       width: 15vw;

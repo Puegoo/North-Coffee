@@ -230,9 +230,6 @@
     margin-right: 20px;
   }
   @media (max-width: 966px) {
-    body {
-      overflow-x: hidden;
-    }
     nav ul {
       display: none;
     }
@@ -259,7 +256,6 @@
   @media (max-width: 480px) {
     body {
       font-size: 14px;
-      overflow-x: hidden;
     }
     .nav-menu-icon {
       display: block;
