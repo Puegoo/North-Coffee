@@ -104,7 +104,7 @@
     background-color: transparent;
   }
   .articles:hover::-webkit-scrollbar-thumb {
-    background-color: #48534c; /* Kolor paska przewijania po najechaniu kursorem */
+    background-color: #48534c;
   }
   
   /* Dodatkowe style dla paska przewijania */
@@ -117,7 +117,7 @@
   }
   
   .articles::-webkit-scrollbar-thumb:hover {
-    background-color: #48534c; /* Kolor paska przewijania po najechaniu kursorem */
+    background-color: #48534c;
   }
   .articles h2 {
     font-size: 36px;
