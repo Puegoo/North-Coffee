@@ -1,0 +1,1148 @@
+:root {
+  --foreground-color: #0000ff;
+  --second-foreground-color: #0000aa;
+  --radius: 10px;
+  --standard-border: 2px solid black;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/*
+HOME - główna strona projektu
+
+Cała strona główna prezentuję się tak, jak na załączonym obrazku. Zawiera ona nagłówek, sekcję z ofertą, sekcję z galerią, sekcję z opisem i sekcję z informacjami.
+Rodzieliłem ją na poszczególne sekcje, aby łatwiej było zdefiniować style dla poszczególnych elementów.
+
+
+<main>
+  <section class="hero">
+    <h1>Witaj na Blogu o Kawie</h1>
+    <img src="Media/logoNorthCoffee.png" alt="logo">
+    <p>Poznaj najlepsze przepisy i ciekawostki ze świata kawy</p>
+  </section>
+
+  <article class="articles">
+    <h2>Najnowsze wpisy</h2>
+    <div class="articles-image">
+      <div class="articles-image-container">
+        <img src="Media/Articles/Art1.png" alt="art1">
+          <a href=""><span class="article-title">Czy (nie)warto dodawać mleka do kawy?</span></a>
+        </div>
+        <div class="articles-image-container">
+          <img src="Media/Articles/Art2.png" alt="art2">
+          <a href=""><span class="article-title">Dlaczego powinieneś pić kawę?</span></a>
+        </div>
+        <div class="articles-image-container">
+          <img src="Media/Articles/Art3.png" alt="art3">
+          <a href=""><span class="article-title">O której porze pić kawę?</span></a>
+        </div>
+        <div class="articles-image-container">
+          <img src="Media/Articles/Art4.png" alt="art4">
+          <a href=""><span class="article-title">Jak kawa wpływa na nasz orgaznim?</span></a>
+        </div>
+    </div>
+  </article>
+
+  <section class="review">
+    <h2>Ostatnio odwiedzone kawiarnie</h2>
+    <div class="review-content">
+      <div class="review-image-container">
+        <img src="Media/Articles/Coffee_bar.png" alt="coffeebar">
+      </div>
+      <div class="review-text">
+        <p>Cafe to urocza kawiarnia, która zachwyciła mnie swoją elegancką atmosferą. Wnętrze jest przytulne, a miękkie kanapy i świeże kwiaty na stolikach tworzą wyjątkowy nastrój. Kawa, zwłaszcza Espresso, jest doskonale przyrządzona i aromatyczna. Obsługa jest uprzejma i profesjonalna. Jednak ceny są nieco wyższe niż przeciętnie, ale warto zapłacić za jakość. Menu oferuje także różnorodne herbaty i napoje zimne, choć opcje wegetariańskie mogłyby być bardziej zróżnicowane. Mimo tych drobnych zastrzeżeń, Cafe to idealne miejsce na relaks i spotkania w wyjątkowej atmosferze. Gorąco polecam wszystkim miłośnikom dobrej kawy i uroczego otoczenia.</p>
+        <p>Ocena: <br>⭐⭐⭐⭐⭐</p>
+      </div>
+    </div>
+  </section>
+      
+  <section class="about">
+    <h2>O mnie</h2>
+   <p>Jestem pasjonatem kawy i dziennikarzem kulinarnym. Na tym blogu dzielę się moją wiedzą i doświadczeniem.</p>
+    <img src="Media/about-author.png" alt="Autor bloga">
+  </section>
+
+  <section class="contact">
+    <h2>Kontakt</h2>
+    <form>
+     <input type="text" placeholder="Twoje imię">
+      <input type="email" placeholder="Twój email">
+     <textarea placeholder="Twoja wiadomość"></textarea>
+     <button type="submit">Wyślij</button>
+    </form>
+  </section>
+</main>
+
+Style guide: 1.0
+*/
+
+/*
+HOME hero - sekcja główna strony
+
+**.hero**: Element o klasie "hero" posiada tło obrazu, które jest ustawione na pełne pokrycie (cover), wyśrodkowane (center), z zachowaniem proporcji (background-size: cover). Pozycja tła jest ustalona jako stała (fixed). Tekst w sekcji jest koloru ciemnego szarego (#11161b), sekcja ma wewnętrzny odstęp 100 pikseli na górze i na dole (100px 0px) oraz jest wyśrodkowany. 
+
+**.hero:before**: Pseudo-element ":before" dla sekcji "hero" jest używany do nakładania półprzezroczystego koloru (#fef7e2) na tło sekcji, z zachowaniem proporcji (background-size: cover). Półprzezroczystość wynosi 0.7, co nadaje efekt przyciemnienia. Ten element ma także z-index równy 1, aby znajdował się pod treścią sekcji.
+
+**.hero > \***: Elementy bezpośrednio potomne sekcji "hero" mają zdefiniowany stosunek z-index równy 2, aby były wyżej niż półprzezroczysty overlay.
+
+**.hero h1**: Nagłówek "h1" w sekcji "hero" ma rozmiar czcionki 48 pikseli i brak marginesów.
+
+**.hero img**: Wszystkie obrazy w sekcji "hero" mają ustawioną szerokość na 15% szerokości widoku (15vw).
+
+**.hero p**: Paragrafy w sekcji "hero" mają rozmiar czcionki 2.6% wysokości widoku (2.6vh) oraz odstęp międzywierszowy równy 1.6.
+
+Markup:
+  <section class="hero">
+    <h1>Witaj na Blogu o Kawie</h1>
+      <img src="Media/logoNorthCoffee.png" alt="logo">
+      <p>Poznaj najlepsze przepisy i ciekawostki ze świata kawy</p>
+  </section>
+
+Style guide: 1.1
+*/
+
+.hero {
+  background-image: url('Media/Backgrounds/BCG_Home.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  color: #11161b;
+  padding: 100px 0px;
+  text-align: center;
+}
+
+.hero:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fef7e2;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.hero img {
+  width: 15vw;
+}
+
+.hero p {
+  font-size: 2.6vh;
+  line-height: 1.6;
+}
+
+/*
+HOME articles- sekcja z najnowszymi wpisami
+
+**.articles**: Element o klasie "articles" posiada wewnętrzny odstęp 2% od góry, 1% od prawej strony, 8% od dołu i 1% od lewej strony. Tło ma kolor #48534c, a tekst kolor #fef7e2.
+
+**.articles h2**: Nagłówek "h2" w sekcji "articles" ma rozmiar czcionki 36 pikseli i jest wyśrodkowany.
+
+**.articles-image**: Kontener dla obrazów artykułów jest ustawiony jako elastyczny flexbox z zawijaniem (flex-wrap: wrap) i równomiernym rozmieszczeniem przestrzeni między elementami (justify-content: space-between).
+
+**.articles-image-container**: Kontener dla obrazków artykułów jest ustawiony jako stosunkowo pozycjonowany (position: relative) z marginesem 10 pikseli we wszystkich kierunkach. Szerokość kontenera jest obliczana na podstawie 25% szerokości rodzica z odjęciem 20 pikseli, aby uzyskać marginesy między obiektami.
+
+**.articles-image-container img**: Obrazy w kontenerach dla obrazków artykułów mają szerokość ustawioną na 100% szerokości kontenera, zachowując proporcje wysokości. Istnieje przejście transformacji i przejrzystości obrazu o czasie 0.3s z łatwością funkcji przejścia.
+
+**.articles-image-container:hover img**: Po najechaniu kursorem na kontener obrazka, obrazek zostaje powiększony o 10% i jego przezroczystość jest zmniejszana do 0.1.
+
+**.article-title**: Nagłówek artykułu jest ustawiony jako absolutnie pozycjonowany wewnątrz kontenera dla obrazków artykułów. Jest wyśrodkowany zarówno wertykalnie, jak i horyzontalnie. Domyślnie jest ukryty (display: none), ale staje się widoczny po najechaniu kursorem na kontener obrazka. Ma kolor biały, pogrubienie, rozmiar czcionki 150% i jest wyśrodkowany.
+
+Markup:
+<article class="articles">
+  <h2>Najnowsze wpisy</h2>
+  <div class="articles-image">
+    <div class="articles-image-container">
+      <img src="Media/Articles/Art1.png" alt="art1">
+        <a href=""><span class="article-title">Czy (nie)warto dodawać mleka do kawy?</span></a>
+      </div>
+      <div class="articles-image-container">
+        <img src="Media/Articles/Art2.png" alt="art2">
+        <a href=""><span class="article-title">Dlaczego powinieneś pić kawę?</span></a>
+      </div>
+      <div class="articles-image-container">
+        <img src="Media/Articles/Art3.png" alt="art3">
+        <a href=""><span class="article-title">O której porze pić kawę?</span></a>
+      </div>
+      <div class="articles-image-container">
+        <img src="Media/Articles/Art4.png" alt="art4">
+        <a href=""><span class="article-title">Jak kawa wpływa na nasz orgaznim?</span></a>
+      </div>
+  </div>
+</article>
+
+Style guide: 1.2
+*/
+.articles {
+  padding: 2% 1% 8% 1%;
+  background-color: #48534c;
+  color: #fef7e2;
+}
+
+.articles h2 {
+  font-size: 36px;
+  text-align: center;
+}
+
+.articles-image {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.articles-image-container {
+  position: relative;
+  margin: 10px;
+  width: calc(25% - 20px);
+}
+
+.articles-image-container img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.articles-image-container:hover img {
+  transform: scale(1.1);
+  opacity: 0.1;
+}
+.article-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 150%;
+}
+
+.articles-image-container:hover .article-title {
+  display: block;
+}
+
+/*
+HOME review- sekcja z recenzją
+
+**.review**: Element o klasie "review" jest ustawiony jako elastyczny flexbox z kierunkiem kolumny (flex-direction: column), elementy są wyśrodkowane w pionie i poziomie (align-items: center, text-align: center). Tekst ma kolor ciemnego szarego (#11161b), a tło jest koloru #fff5e6. Istnieje wewnętrzny odstęp 2% od góry, 1% od prawej, 4% od dołu i 1% od lewej.
+
+**.review h2**: Nagłówek "h2" w sekcji "review" ma rozmiar czcionki 36 pikseli i margines dolny równy 20 pikseli.
+
+**.review-content**: Kontener dla zawartości recenzji jest ustawiony jako elastyczny flexbox z wyśrodkowaniem w pionie (align-items: center) i lewym wyrównaniem tekstu (text-align: left).
+
+**.review-image-container**: Kontener dla obrazka w recenzji zajmuje elastyczny udział w flexboxie (flex: 1) i ma margines z prawej strony równy 20 pikseli.
+
+**.review img**: Obrazek w recenzji ma maksymalną szerokość równą 100% szerokości rodzica, zachowując proporcje wysokości.
+
+**.review-text**: Tekst recenzji zajmuje większą część przestrzeni flexboxu (flex: 2) i jest wyrównany do lewej.
+
+**.review-text p**: Paragrafy w tekście recenzji są wyrównane do lewej.
+
+**.review-text p:first-of-type**: Pierwszy paragraf tekstu recenzji ma rozmiar czcionki 1.2em i styl kursywy.
+
+**@media (max-width: 966px)**:
+
+**.review-content, .articles-image-container**: Elementy te są ustawione w kolumnie, aby dopasować się do mniejszych urządzeń. 
+
+**.articles-image-container**: Szerokość kontenera obrazków artykułów zostaje zmniejszona do 50% szerokości widoku minus 20 pikseli marginesu.
+
+**.review-image-container, .review-text**: W sekcji recenzji, kontenery dla obrazka i tekstu zajmują teraz 100% szerokości, aby dopasować się do układu kolumnowego.
+
+Markup:
+<section class="review">
+  <h2>Ostatnio odwiedzone kawiarnie</h2>
+  <div class="review-content">
+    <div class="review-image-container">
+      <img src="Media/Articles/Coffee_bar.png" alt="coffeebar">
+    </div>
+    <div class="review-text">
+      <p>Cafe to urocza kawiarnia, która zachwyciła mnie swoją elegancką atmosferą. Wnętrze jest przytulne, a miękkie kanapy i świeże kwiaty na stolikach tworzą wyjątkowy nastrój. Kawa, zwłaszcza Espresso, jest doskonale przyrządzona i aromatyczna. Obsługa jest uprzejma i profesjonalna. Jednak ceny są nieco wyższe niż przeciętnie, ale warto zapłacić za jakość. Menu oferuje także różnorodne herbaty i napoje zimne, choć opcje wegetariańskie mogłyby być bardziej zróżnicowane. Mimo tych drobnych zastrzeżeń, Cafe to idealne miejsce na relaks i spotkania w wyjątkowej atmosferze. Gorąco polecam wszystkim miłośnikom dobrej kawy i uroczego otoczenia.</p>
+      <p>Ocena: <br>⭐⭐⭐⭐⭐</p>
+    </div>
+  </div>
+</section>
+
+Style guide: 1.3
+*/
+.review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #11161b;
+  padding: 2% 1% 4% 1%;
+  background-color: #fff5e6;
+}
+
+.review h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.review-content {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.review-image-container {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.review img {
+  max-width: 100%;
+  height: auto;
+}
+
+.review-text {
+  flex: 2;
+  text-align: left;
+}
+
+.review-text p {
+  text-align: center;
+}
+
+.review-text p:first-of-type {
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+.review-text p:last-of-type {
+  font-size: 1.3em;
+}
+
+/*
+HOME about- sekcja o mnie
+
+**.about**: Element o klasie "about" ma tło o kolorze #11161b oraz kolor tekstu #fff5e6. Istnieje wewnętrzny odstęp 50 pikseli na górze i na dole oraz 20 pikseli po bokach. Tekst jest wyśrodkowany.
+
+**.about h2**: Nagłówek "h2" w sekcji "about" ma rozmiar czcionki 36 pikseli i kolor tekstu #fff5e6.
+
+**.about p**: Paragrafy w sekcji "about" mają rozmiar czcionki 1.2em, odstęp międzywierszowy wynoszący 1.6, oraz margines dolny równy 30 pikseli.
+
+**.about img**: Obrazki w sekcji "about" mają szerokość równą 25% wysokości widoku, zachowując proporcje wysokości. Dodatkowo mają zaokrąglone krawędzie (border-radius: 50%).
+
+**@media (max-width: 966px)**:
+
+**.about img**: Szerokość obrazka jest ograniczona do maksymalnie 50% szerokości widoku, aby lepiej dopasować się do mniejszych ekranów.
+
+Markup:
+<section class="about">
+  <h2>O mnie</h2>
+  <p>Jestem pasjonatem kawy i dziennikarzem kulinarnym. Na tym blogu dzielę się moją wiedzą i doświadczeniem.</p>
+  <img src="Media/about-author.png" alt="Autor bloga">
+</section>
+
+Style guide: 1.4
+*/
+
+.about {
+  background-color: #11161b;
+  color: #fff5e6;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 36px;
+  color: #fff5e6;;
+}
+
+.about p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.about img {
+  width: 25vh;
+  height: auto;
+  border-radius: 50%;
+}
+
+/*
+HOME contact- sekcja kontaktowa
+
+**.contact**: Element o klasie "contact" ma kolor tekstu #11161b oraz wewnętrzny odstęp 50 pikseli na górze i na dole oraz 20 pikseli po bokach. Tło ma kolor #f5f5f5, a tekst jest wyśrodkowany.
+
+**.contact h2**: Nagłówek "h2" w sekcji "contact" ma rozmiar czcionki 36 pikseli i margines dolny równy 20 pikseli.
+
+**.contact form**: Formularz w sekcji "contact" ma maksymalną szerokość 600 pikseli i jest wyśrodkowany na stronie.
+
+**.contact input, .contact textarea, .contact button**: Pola wejściowe, pole tekstowe i przycisk w formularzu mają szerokość 100%, margines dolny równy 20 pikseli, padding 10 pikseli, obramowanie o grubości 1 piksela i zaokrąglone krawędzie o promieniu 5 pikseli. Rozmiar czcionki wynosi 1em.
+
+**.contact button**: Przycisk w formularzu ma tło w kolorze #11161b, kolor tekstu #fef7e2 oraz kursor w postaci wskaźnika.
+
+**@media (max-width: 966px)**:
+
+**.contact form**: Wewnątrz media query o szerokości ekranu do 966 pikseli, szerokość formularza jest zmniejszona do 90% szerokości, aby lepiej dostosować się do mniejszych ekranów.
+
+Markup:
+<section class="contact">
+  <h2>Kontakt</h2>
+  <form>
+    <input type="text" placeholder="Twoje imię">
+    <input type="email" placeholder="Twój email">
+    <textarea placeholder="Twoja wiadomość"></textarea>
+    <button type="submit">Wyślij</button>
+  </form>
+</section>
+
+Style guide: 1.5
+*/
+.contact {
+  color: #11161b;
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+.contact h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.contact form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact input,
+.contact textarea,
+.contact button {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #3c3c3b;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.contact button {
+  background-color: #11161b;
+  color: #fef7e2;
+  cursor: pointer;
+}
+/*
+HOME footer - stópka strony
+
+**.footer-at-bottom**: Element o klasie "footer-at-bottom" ma tło o kolorze #fff5e6, kolor tekstu #3c3c3b oraz wewnętrzny odstęp 20 pikseli. Tekst jest wyśrodkowany, a margines górny jest automatycznie dostosowywany.
+
+**.footer-at-bottom img**: Obrazki w stopce strony mają szerokość 3em i margines prawy równy 20 pikseli.
+
+**@media (max-width: 966px)**:
+
+**.footer-at-bottom img**: Szerokość obrazków w stopce jest zmniejszona do 3em, aby lepiej dostosować się do mniejszych ekranów.
+
+Markup:
+<footer class="footer-at-bottom">
+  <a href=""><img src="Media/SocialMedia/instagram.png" alt="instagram"></a>
+  <a href=""><img src="Media/SocialMedia/facebook.png" alt="facebook"></a>
+  <a href=""><img src="Media/SocialMedia/tiktok.png" alt="tiktok"></a>
+  <a href=""><img src="Media/SocialMedia/twitter.png" alt="twitter"></a>
+  <p>© 2024 North Coffee. Wszelkie prawa zastrzeżone.</p>
+</footer>
+
+Style guide: 1.6
+*/
+.footer-at-bottom {
+  background-color: #fff5e6;
+  color: #3c3c3b;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-at-bottom img {
+  width: 3em;
+  margin-right: 20px;
+}
+
+
+/* contact.html*/
+.hero-contact {
+  background-image: url("Media/Backgrounds/kontaktcoffee.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  color: #11161b;
+  padding: 100px 0px;
+  text-align: center;
+}
+
+.hero-contact:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fef7e2;
+  opacity: 0.7;
+  z-index: 1;
+}
+.hero-contact > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-contact h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.ourplace {
+  padding: 2% 0% 8% 5%;
+  background-color: #48534c;
+  color: #fef7e2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: larger;
+}
+
+.ourplace h2 {
+  font-size: 36px;
+  text-align: center;
+}
+
+.ourplace .content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.ourplace .logo,
+.ourplace .map {
+  flex: 1;
+}
+
+.ourplace .logo img {
+  width: 120px;
+  height: auto;
+}
+
+.ourplace .map iframe {
+  max-width: 80%;
+  max-height: 100%;
+}
+
+.contact {
+  background: #f5f5f5;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.25rem;
+  margin-bottom: 20px;
+}
+
+.contact form {
+  max-width: 500px;
+  margin: auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+#form-group-sex p {
+  margin-bottom: 5px;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #555;
+}
+
+.footer-at-bottom {
+  background-color: #fff5e6;
+  color: #3c3c3b;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-at-bottom img {
+  width: 3em;
+  margin-right: 20px;
+}
+
+@media (max-width: 966px) {
+  .nav-right {
+    flex-direction: column;
+  }
+  .logo img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  .contact form {
+    width: 90%;
+  }
+}
+
+/* gallery.html*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+main {
+  flex: 1;
+}
+body.padding-for-nav {
+  padding-top: 80px;
+}
+.hero-gallery{
+  background-image: url('Media/Backgrounds/kociaKawiarnia.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  color: #11161b;
+  padding: 100px 0px;
+  text-align: center;
+}
+
+.hero-gallery:before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fef7e2;
+  opacity: 0.7;
+  z-index: 1;
+}
+.hero-gallery > * {
+  position: relative;
+  z-index: 2;
+}
+.hero-gallery h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.last-photos-carousel, .carusel-label{
+  padding: 2% 1% 8% 1%;
+  background-color: #48534c;
+  position: relative;
+}
+.carusel-label {
+  font-size: 36px;
+  text-align: center;
+  color: #fef7e2;
+  padding-bottom: 60px;
+}
+
+.carusel > input{
+  display: none;
+}
+.carusel-label{
+  margin: 0%;
+  height: 0px;
+}
+.carusel{
+  max-width: 100%;
+  height: 500px;
+  max-height: 100vh;
+  margin: 20px auto;
+  overflow: hidden;
+  user-select: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.carusel__item {
+  position: absolute; 
+  z-index: 1;
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: center no-repeat;
+  transition: left 0.5s, transform 0.5s;
+  will-change: transform;
+  backface-visibility: hidden;
+  background-size: cover;
+  transition: left 0.5s;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.carusel__arrow {
+  display: none;
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  transform: translateY(-50%);
+  opacity: 0.7;
+  color: #fff;
+  background-color: #999;
+  cursor: pointer;
+  padding: 10px; 
+  font-size: 28px;
+  line-height: 39px;
+  font-weight: bold;
+}
+
+
+input:checked+div~div~div~div .carusel__item {background-image: none !important;}
+input:checked+div *, input:checked+div+input+div .carusel__item, input:checked+div+input+div+input+div * {display: block;}
+
+input:checked+div .carusel__item {left: -100%; transform: scale(0.4);}
+input:checked+div+input+div .carusel__item {left: 0; transform: scale(1);}
+input:checked+div+input+div+input+div .carusel__item {left: 100%; transform: scale(0.4);}
+
+input:checked+div .carusel__arrow {left: 0;}
+input:checked+div+input+div+input+div .carusel__arrow {right: 0;}
+
+input:checked+div .carusel__arrow:before {content: '❰';}
+input:checked+div+input+div+input+div .carusel__arrow:before{content: '❱';}
+
+
+.collections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4% 1% 5% 1%;
+  background-color: #fef7e2;
+}
+
+.collections-header h2 {
+  font-size: 36px;
+  text-align: center;
+  margin: 0 0 30% 0;
+}
+
+.images-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.images-wrapper-coll {
+  perspective: 1000px;
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 0 10px;
+}
+
+.images-wrapper-coll img {
+  transition: transform 0.7s ease, z-index 0.7s linear;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: rotateY(0deg) translateZ(0);
+  transform-origin: center center;
+  backface-visibility: hidden;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.images-wrapper-coll:hover img:nth-of-type(1) {
+  transform: rotateY(15deg) translateZ(60px) translateY(-15px) translateX(-10px);
+  z-index: 1;
+}
+
+.images-wrapper-coll:hover img:nth-of-type(2) {
+  transform: rotateY(15deg) translateZ(120px) translateY(-30px);
+  z-index: 2;
+}
+
+.images-wrapper-coll:hover img:nth-of-type(3) {
+  transform: rotateY(15deg) translateZ(180px) translateY(-45px) translateX(10px);
+  z-index: 3;
+}
+
+.about {
+  background-color: #11161b;
+  color: #fff5e6;
+  padding: 50px 20px;
+  text-align: center;
+}
+.about h2 {
+  font-size: 36px;
+}
+.about p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.about img {
+  max-width: 20%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.contact {
+  background: #f5f5f5;
+  padding: 50px 20px;
+  text-align: center;
+}
+.contact h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+.contact form {
+  max-width: 500px;
+  margin: auto;
+}
+.contact input, .contact textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+}
+.contact button {
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.footer-at-bottom {
+  background-color: #fff5e6; 
+  color: #3c3c3b;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-at-bottom img{
+  width: 3em;
+  margin-right: 20px;
+}
+
+@media (max-width: 966px) {
+  .nav-right {
+    flex-direction: column;
+  }
+  .logo img {
+    width: 100px;
+  }
+  .collections-header h2 {
+    margin: 0 0 20% 0;
+  }
+  .images-wrapper {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  .footer-at-bottom img {
+    width: 15vw;
+  }
+  .carusel {
+    max-width: 100%;
+  }
+  .images-wrapper{
+    justify-content: center;
+  }
+}
+/* guestbook.html*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+body.padding-for-nav {
+  padding-top: 80px;
+}
+main {
+  flex: 1;
+}
+.hero{
+  background-image: url('Media/Backgrounds/BCG_Home.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  color: #11161b;
+  padding: 100px 0px;
+  text-align: center;
+}
+.hero:before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fef7e2;
+  opacity: 0.7;
+  z-index: 1;
+}
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
+.hero h1 {
+  font-size: 48px;
+  margin: 0;
+}
+.hero img {
+  width: 15vw;
+}
+.hero p {
+  font-size: 2.6vh;
+  line-height: 1.6;
+}
+
+.articles {
+  padding: 2% 1% 8% 1%;
+  background-color: #48534c;
+  color: #fef7e2;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  max-height: 360px;
+}
+.articles::-webkit-scrollbar {
+  width: 6px;
+}
+.articles::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+.articles:hover::-webkit-scrollbar-thumb {
+  background-color: #48534c;
+}
+
+/* Dodatkowe style dla paska przewijania */
+.articles::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.articles::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+.articles::-webkit-scrollbar-thumb:hover {
+  background-color: #48534c;
+}
+.articles h2 {
+  font-size: 36px;
+  text-align: center;
+}
+
+.articles-image {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.articles-image-container {
+  position: relative;
+  margin: 10px;
+  margin-bottom: 20px;
+  width: calc(25% - 20px);
+}
+.articles-image-container img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.articles-image-container:hover img {
+  transform: scale(1.1);
+  opacity: 0.1;
+}
+
+.article-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 150%;
+}
+
+.articles-image-container:hover .article-title {
+  display: block;
+}
+.guestbook {
+  background-color: #fff5e6;
+  color: #11161b;
+  padding: 50px 20px;
+  text-align: center;
+}
+.guestbook h2 {
+  font-size: 36px;
+}
+
+#guestBookForm {
+  max-width: 500px;
+  margin: auto;
+}
+
+#guestBookForm label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+#guestName,
+#guestMessage {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+}
+
+#guestBookEntries {
+  margin-top: 20px;
+  text-align: left;
+}
+
+#guestBookEntries div {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+#guestBookEntries div:last-child {
+  border-bottom: none;
+}
+.guestbook button{
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: solid #11161b 1;
+  border-radius: 5px;
+  background-color: white;
+  color: #11161b;
+  transition: background-color 0.3s ease;
+}
+
+.footer-at-bottom {
+  background-color: #fff5e6; 
+  color: #3c3c3b;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+}
+.footer-at-bottom img{
+  width: 3em;
+  margin-right: 20px;
+}
+@media (max-width: 966px) {
+  nav ul {
+    display: none;
+  }
+  .nav-right {
+    flex-direction: column;
+  }
+  .logo img {
+    width: 100px;
+  }
+  .hero h1{
+    font-size: 5vw;
+  }
+  .articles-image-container{
+    flex-direction: column;
+  }
+  .articles-image-container{
+    width: calc(50% - 20px);
+  }
+  .guestbook{
+    padding-right: 12%;
+  }
+}

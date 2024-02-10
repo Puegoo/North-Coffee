@@ -1,0 +1,450 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  body.padding-for-nav {
+    padding-top: 80px;
+  }
+  main {
+    flex: 1;
+  }
+
+  /*
+GUEST - strona z JavaScript'em
+
+<main>
+      <section class="hero">
+        <h1>Artykuły</h1>
+      </section>
+      <article class="articles">
+        <h2>Wszystkie wpisy</h2>
+        <div class="articles-image">
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art1.png" alt="art1">
+            <a href=""><span class="article-title">Czy (nie)warto dodawać mleka do kawy?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art2.png" alt="art2">
+            <a href=""><span class="article-title">Dlaczego powinieneś pić kawę?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art3.png" alt="art3">
+            <a href=""><span class="article-title">O której porze pić kawę?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art4.png" alt="art4">
+            <a href=""><span class="article-title">Jak kawa wpływa na nasz orgaznim?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art1.png" alt="art1">
+            <a href=""><span class="article-title">Czy (nie)warto dodawać mleka do kawy?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art2.png" alt="art2">
+            <a href=""><span class="article-title">Dlaczego powinieneś pić kawę?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art3.png" alt="art3">
+            <a href=""><span class="article-title">O której porze pić kawę?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art4.png" alt="art4">
+            <a href=""><span class="article-title">Jak kawa wpływa na nasz orgaznim?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art1.png" alt="art1">
+            <a href=""><span class="article-title">Czy (nie)warto dodawać mleka do kawy?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art2.png" alt="art2">
+            <a href=""><span class="article-title">Dlaczego powinieneś pić kawę?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art3.png" alt="art3">
+            <a href=""><span class="article-title">O której porze pić kawę?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art4.png" alt="art4">
+            <a href=""><span class="article-title">Jak kawa wpływa na nasz orgaznim?</span></a>
+          </div>
+        </div>
+      </article>
+      <section id="guestbook" class="guestbook">
+        <h2>Księga Gości</h2>
+        <form id="guestBookForm">
+          <label for="guestName">Twoje nick:</label>
+          <input type="text" placeholder="Twój nick" id="guestName" required>
+          <label for="guestMessage">Twoja wiadomość:</label>
+          <textarea id="guestMessage" placeholder="Twoja wiadomość" required></textarea>
+          <button type="submit">Dodaj wpis</button>
+        </form>
+        <div id="guestBookEntries"></div>
+      </section>
+</main>
+
+Style guide: 2.0
+*/
+
+/*
+GUEST hero- sekcja główna strony
+
+**.hero**: Element o klasie "hero" posiada tło obrazu z pliku 'BCG_Home.png', które jest rozciągnięte, wyśrodkowane i przyczepione do góry strony. Tekst wewnątrz sekcji ma kolor #11161b, a wewnętrzny odstęp wynosi 100 pikseli na górze i na dole, a 0 pikseli poziomo. Tekst jest wyśrodkowany.
+
+**.hero:before**: Pseudo-element ":before" w sekcji "hero" jest absolutnie pozycjonowany i ma tło o kolorze #fef7e2 z przechodniością 0.7, zajmuje całą przestrzeń sekcji i znajduje się pod innymi elementami (z-index: 1).
+
+**.hero > ***: Wszystkie bezpośrednie potomki sekcji "hero" mają ustawioną relatywną pozycję i indeks z-index na 2.
+
+**.hero h1**: Nagłówek "h1" w sekcji "hero" ma rozmiar czcionki 48 pikseli i brak marginesów.
+
+**.hero img**: Obrazy w sekcji "hero" mają szerokość ustawioną na 15% szerokości widoku.
+
+**.hero p**: Akapity w sekcji "hero" mają rozmiar czcionki 2.6% wysokości widoku oraz odstęp międzywierszowy równy 1.6.
+
+Markup:
+<section class="hero">
+        <h1>Artykuły</h1>
+</section>
+
+Style guide: 2.1
+*/
+  .hero{
+    background-image: url('Media/Backgrounds/BCG_Home.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    color: #11161b;
+    padding: 100px 0px;
+    text-align: center;
+  }
+  .hero:before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fef7e2;
+    opacity: 0.7;
+    z-index: 1;
+  }
+  .hero > * {
+    position: relative;
+    z-index: 2;
+  }
+  .hero h1 {
+    font-size: 48px;
+    margin: 0;
+  }
+  .hero img {
+    width: 15vw;
+  }
+  .hero p {
+    font-size: 2.6vh;
+    line-height: 1.6;
+  }
+  
+  /*
+GUEST articles- sekcja z przwijanymi artykułami
+
+**.articles**: Element o klasie "articles" posiada tło o kolorze #48534c oraz biały kolor tekstu. Wewnętrzny odstęp wynosi 2% na górze, 1% po prawej, 8% na dole i 1% po lewej stronie. Sekcja posiada pionowe przewijanie (overflow-y: scroll) i niestandardowy styl dla paska przewijania.
+
+**::-webkit-scrollbar**: Stylowanie dla paska przewijania w przeglądarkach opartych na silniku WebKit.
+
+**::-webkit-scrollbar-thumb**: Stylowanie dla kciuka paska przewijania.
+
+**::-webkit-scrollbar-track**: Dodatkowy styl dla tła paska przewijania.
+
+**.articles h2**: Nagłówek "h2" w sekcji "articles" ma rozmiar czcionki 36 pikseli i jest wyśrodkowany.
+
+**.articles-image**: Kontener dla obrazów w sekcji "articles" wykorzystuje flexbox do rozmieszczenia elementów w układzie kolumnowym z odstępami między nimi.
+
+**.articles-image-container**: Kontener dla pojedynczego obrazu w sekcji "articles" posiada relatywną pozycję, marginesy, szerokość 25% kontenera minus 20 pikseli oraz jest ustawiony jako element, który można najechać kursorem.
+
+**.articles-image-container img**: Obrazy w kontenerach "articles-image-container" zajmują 100% szerokości kontenera, a ich wysokość jest dostosowana proporcjonalnie. Mają również animacje transformacji i zmiany przezroczystości po najechaniu kursorem.
+
+**.article-title**: Nagłówek artykułu w sekcji "articles" ma absolutną pozycję i jest wyśrodkowany zarówno w pionie, jak i w poziomie. Tekst jest biały, pogrubiony, wyśrodkowany i ma rozmiar czcionki 150%. Domyślnie jest ukryty, ale staje się widoczny po najechaniu kursorem na kontener obrazu.
+
+Markup:
+<article class="articles">
+        <h2>Wszystkie wpisy</h2>
+        <div class="articles-image">
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art1.png" alt="art1">
+            <a href=""><span class="article-title">Czy (nie)warto dodawać mleka do kawy?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art2.png" alt="art2">
+            <a href=""><span class="article-title">Dlaczego powinieneś pić kawę?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art3.png" alt="art3">
+            <a href=""><span class="article-title">O której porze pić kawę?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art4.png" alt="art4">
+            <a href=""><span class="article-title">Jak kawa wpływa na nasz orgaznim?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art1.png" alt="art1">
+            <a href=""><span class="article-title">Czy (nie)warto dodawać mleka do kawy?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art2.png" alt="art2">
+            <a href=""><span class="article-title">Dlaczego powinieneś pić kawę?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art3.png" alt="art3">
+            <a href=""><span class="article-title">O której porze pić kawę?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art4.png" alt="art4">
+            <a href=""><span class="article-title">Jak kawa wpływa na nasz orgaznim?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art1.png" alt="art1">
+            <a href=""><span class="article-title">Czy (nie)warto dodawać mleka do kawy?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art2.png" alt="art2">
+            <a href=""><span class="article-title">Dlaczego powinieneś pić kawę?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art3.png" alt="art3">
+            <a href=""><span class="article-title">O której porze pić kawę?</span></a>
+          </div>
+          <div class="articles-image-container">
+            <img src="Media/Articles/Art4.png" alt="art4">
+            <a href=""><span class="article-title">Jak kawa wpływa na nasz orgaznim?</span></a>
+          </div>
+        </div>
+</article>
+
+Style guide: 2.2
+*/
+  .articles {
+    padding: 2% 1% 8% 1%;
+    background-color: #48534c;
+    color: #fef7e2;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    max-height: 360px;
+  }
+  .articles::-webkit-scrollbar {
+    width: 6px;
+  }
+  .articles::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  .articles:hover::-webkit-scrollbar-thumb {
+    background-color: #48534c;
+  }
+  
+  /* Dodatkowe style dla paska przewijania */
+  .articles::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  .articles::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+  }
+  
+  .articles::-webkit-scrollbar-thumb:hover {
+    background-color: #48534c;
+  }
+  .articles h2 {
+    font-size: 36px;
+    text-align: center;
+  }
+  
+  .articles-image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .articles-image-container {
+    position: relative;
+    margin: 10px;
+    margin-bottom: 20px;
+    width: calc(25% - 20px);
+  }
+  .articles-image-container img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .articles-image-container:hover img {
+    transform: scale(1.1);
+    opacity: 0.1;
+  }
+
+  .article-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 150%;
+  }
+  
+  .articles-image-container:hover .article-title {
+    display: block;
+  }
+
+  /*
+GUEST guestbook- sekcja z mechanizmem księgi gości
+
+**.guestbook**: Element o klasie "guestbook" posiada tło o kolorze #fff5e6 oraz czarny kolor tekstu. Wewnętrzny odstęp wynosi 50 pikseli na górze i na dole oraz 20 pikseli poziomo. Tekst jest wyśrodkowany.
+
+**.guestbook h2**: Nagłówek "h2" w sekcji "guestbook" ma rozmiar czcionki 36 pikseli.
+
+**#guestBookForm**: Formularz w sekcji "guestbook" ma maksymalną szerokość 500 pikseli i jest wyśrodkowany.
+
+**#guestBookForm label**: Etykiety w formularzu "guestBookForm" są wyświetlane jako blokowe z odstępem na dole równym 10 pikselom i mają rozmiar czcionki 18 pikseli.
+
+**#guestName, #guestMessage**: Pola tekstowe "guestName" i "guestMessage" w formularzu mają szerokość 100%, wewnętrzny odstęp 10 pikseli na wszystkich czterech krawędziach oraz obramowanie o grubości 1 piksela i kolorze #ddd.
+
+**#guestBookEntries**: Kontener dla wpisów w księdze gości ma margines na górze wynoszący 20 pikseli i jest wyrównany do lewej strony.
+
+**#guestBookEntries div**: Każdy wpis w księdze gości ma dolną obramowaną granicę o grubości 1 piksela i kolorze #ddd oraz wewnętrzny odstęp 10 pikseli na górze i na dole.
+
+**#guestBookEntries div:last-child**: Ostatni wpis w księdze gości nie posiada dolnej obramowanej granicy.
+
+**.guestbook button**: Przycisk w sekcji "guestbook" jest wyświetlany jako blokowy element, posiada wypełnienie 12 pikseli na górze i na dole oraz 20 pikseli po bokach, rozmiar czcionki 16 pikseli, jest pogrubiony i wyśrodkowany. Ma obramowanie o grubości 1 piksela i kolorze #11161b, zaokrąglenie krawędzi o promieniu 5 pikseli, białe tło oraz czarny kolor tekstu. Przy najechaniu kursorem zmienia kolor tła z białego na #11161b w czasie trwania 0.3 sekundy.
+
+Markup:
+<section id="guestbook" class="guestbook">
+        <h2>Księga Gości</h2>
+        <form id="guestBookForm">
+          <label for="guestName">Twoje nick:</label>
+          <input type="text" placeholder="Twój nick" id="guestName" required>
+          <label for="guestMessage">Twoja wiadomość:</label>
+          <textarea id="guestMessage" placeholder="Twoja wiadomość" required></textarea>
+          <button type="submit">Dodaj wpis</button>
+        </form>
+        <div id="guestBookEntries"></div>
+</section>
+
+Style guide: 2.3
+*/
+  .guestbook {
+    background-color: #fff5e6;
+    color: #11161b;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  .guestbook h2 {
+    font-size: 36px;
+  }
+  
+  #guestBookForm {
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  #guestBookForm label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  #guestName,
+  #guestMessage {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  #guestBookEntries {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  #guestBookEntries div {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  #guestBookEntries div:last-child {
+    border-bottom: none;
+  }
+  .guestbook button{
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: solid #11161b 1;
+    border-radius: 5px;
+    background-color: white;
+    color: #11161b;
+    transition: background-color 0.3s ease;
+  }
+
+  /*
+GUEST footer- sekcja kontaktowa
+
+**.footer-at-bottom**: Element o klasie "footer-at-bottom" posiada tło o kolorze #fff5e6 oraz kolor tekstu #3c3c3b. Wewnętrzny odstęp wynosi 20 pikseli na wszystkich czterech krawędziach, a tekst jest wyśrodkowany. Jest umieszczony na dole strony.
+
+**.footer-at-bottom img**: Obrazy w sekcji stopki mają szerokość 3em i margines z prawej strony wynoszący 20 pikseli.
+
+Markup:
+<footer class="footer-at-bottom">
+    <a href=""><img src="Media/SocialMedia/instagram.png" alt="instagram"></a>
+    <a href=""><img src="Media/SocialMedia/facebook.png" alt="facebook"></a>
+    <a href=""><img src="Media/SocialMedia/tiktok.png" alt="tiktok"></a>
+    <a href=""><img src="Media/SocialMedia/twitter.png" alt="twitter"></a>
+    <p>© 2024 North Coffee. Wszelkie prawa zastrzeżone.</p>
+</footer>
+
+Style guide: 2.4
+*/ 
+  
+  .footer-at-bottom {
+    background-color: #fff5e6; 
+    color: #3c3c3b;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+  }
+  .footer-at-bottom img{
+    width: 3em;
+    margin-right: 20px;
+  }
+  @media (max-width: 966px) {
+    nav ul {
+      display: none;
+    }
+    .nav-right {
+      flex-direction: column;
+    }
+    .logo img {
+      width: 100px;
+    }
+    .hero h1{
+      font-size: 5vw;
+    }
+    .articles-image-container{
+      flex-direction: column;
+    }
+    .articles-image-container{
+      width: calc(50% - 20px);
+    }
+    .guestbook{
+      padding-right: 12%;
+    }
+  }
+  

@@ -1,0 +1,408 @@
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1;
+}
+
+/*
+CONTACT - strona kontaktowa projektu
+
+<main>
+    <section class="hero-contact">
+        <h1>Kontakt</h1>
+    </section>
+    <section class="ourplace">
+        <h2>Nasza kawiarnia</h2>
+        <div class="content-wrapper">
+            <div class="logo">
+                <img src="Media/logoNorthCoffee.png" alt="logo" />
+                <p>Nazwa firmy: North Coffee</p>
+                <p>NIP: 34789127489194719</p>
+                <p>Adres: al. Jakaś 32, Rzeszów</p>
+                <p>Skontaktuj się z nami:</p>
+                <p>tel: 000 000 000</p>
+                <p>lub przez formularz poniżej :)</p>
+            </div>
+             <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5125.585942567638!2d22.00539216978305!3d50.033975027088765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473cfaf83c5a9833%3A0x432f7dd9b86f7a01!2sUniwersytet%20Rzeszowski!5e0!3m2!1spl!2spl!4v1705863079009!5m2!1spl!2spl" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Formularz</h2>
+        <form>
+          <div class="form-group">
+            <label for="name">Imię:</label>
+            <input type="text" id="name" name="name" placeholder="Twoje imię" required />
+          </div>
+          <div class="form-group">
+            <label for="surname">Nazwisko:</label>
+            <input type="text" id="surname" name="surname" placeholder="Twoje nazwisko" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <inpu type="email id="email name="email placeholder="Twój email require />
+          </div>
+          <div class="form-group">
+            <label for="date">Data urodzenia:</label>
+            <input type="date" id="date" name="date" />
+          </div>
+          <div class="form-group">
+            <label for="category">Kategoria:</label>
+            <select id="category" name="category">
+              <option value="">--Wybierz opcję--</option>
+              <option value="kawa">Kawa</option>
+              <option value="herbata">Herbata</option>
+              <option value="ciastko">Ciastko</option>
+            </select>
+          </div>
+          <div class="form-group" id="form-group-sex">
+            <p>Płeć:</p>
+            Mężczyzna<input type="radio" id="male" name="gender" value="male" />
+            Kobieta<input type="radio" id="female" name="gender" value="female" />
+          </div>
+          <div class="form-group">
+            <label for="message">Wiadomość:</label>
+            <textarea id="message" name="message" placeholder="Twoja wiadomość" required ></textarea>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="subscribe" name="subscribe" />
+            <label for="subscribe">Subskrybuj newsletter</label>
+          </div>
+          <div class="form-group">
+            <button type="submit">Wyślij</button>
+          </div>
+        </form>
+      </section>
+</main>
+
+Style guide: 4.0
+*/
+
+/*
+CONTACT hero - sekcja główna strony kontaktowej
+
+**.hero-contact**: Element o klasie "hero-contact" posiada tło w postaci obrazu "kontaktcoffee.png" znajdującego się w katalogu "Media/Backgrounds". Obraz tła jest skalowany, aby wypełnić całą dostępną przestrzeń (background-size: cover) i wyśrodkowany (background-position: center). Tło jest także przypięte, aby pozostać nieruchome podczas przewijania strony (background-attachment: fixed). Element ten jest ustawiony jako relatywny, co pozwala na pozycjonowanie jego potomków. Kolor tekstu w sekcji jest ciemnoszary (#11161b), a wewnętrzny odstęp wynosi 100 pikseli na górze i na dole, a poziomo jest zerowy. Tekst jest wyśrodkowany.
+
+**.hero-contact:before**: Pseudo-element ":before" dla sekcji "hero-contact" jest używany do dodania nakładki koloru na tło. Jest to blokowy element, który zajmuje całą przestrzeń swojego kontenera. Ma kolor tła #fef7e2 z przyciemnieniem 70% (opacity: 0.7) i jest ustawiony na warstwie z indeksem 1, aby znajdował się pod innymi elementami w sekcji.
+
+**.hero-contact > \***: Elementy potomne bezpośrednio umieszczone w sekcji "hero-contact" mają ustawioną pozycję relatywną i są umieszczone na warstwie z indeksem 2, aby wyświetlać się nad nakładką koloru.
+
+**.hero-contact h1**: Nagłówek "h1" w sekcji "hero-contact" ma rozmiar czcionki 48 pikseli i margines ustawiony na 0.
+
+Markup:
+<section class="hero-contact">
+    <h1>Kontakt</h1>
+</section>
+
+Style guide: 4.1
+*/
+
+.hero-contact {
+  background-image: url("Media/Backgrounds/kontaktcoffee.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  color: #11161b;
+  padding: 100px 0px;
+  text-align: center;
+}
+
+.hero-contact:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fef7e2;
+  opacity: 0.7;
+  z-index: 1;
+}
+.hero-contact > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-contact h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+/*
+CONTACT ourplace - sekcja infromacyjna
+
+**.ourplace**: Element o klasie "ourplace" ma wewnętrzny odstęp 2% od góry, 0% od prawej strony, 8% od dołu i 5% od lewej strony. Tło ma kolor #48534c, a tekst ma kolor #fef7e2. Element ten jest ustawiony jako elastyczny flexbox z kierunkiem kolumny (flex-direction: column) i wyśrodkowaniem elementów w osi krzyżowej (align-items: center). Rozmiar czcionki jest ustawiony na większy.
+
+**.ourplace h2**: Nagłówek "h2" w sekcji "ourplace" ma rozmiar czcionki 36 pikseli i jest wyśrodkowany.
+
+**.ourplace .content-wrapper**: Kontener dla zawartości sekcji "ourplace" jest elastycznym flexboxem z rozmieszczeniem elementów równomiernie na przestrzeni, ustawionym na osi głównej (justify-content: space-between) i wyśrodkowanym na osi krzyżowej (align-items: center). Ma szerokość równą 100%.
+
+**.ourplace .logo, .ourplace .map**: Elementy o klasach "logo" i "map" zajmują elastyczny udział w flexboxie, co oznacza, że są ustawione na 1 część dostępnej przestrzeni.
+
+**.ourplace .logo img**: Obrazek w sekcji "ourplace" ma szerokość ustawioną na 120 pikseli, a wysokość jest automatycznie dostosowywana, aby zachować proporcje.
+
+**.ourplace .map iframe**: Ramka iframe zawierająca mapę w sekcji "ourplace" ma maksymalną szerokość ustawioną na 80% szerokości kontenera i maksymalną wysokość równą 100% dostępnej przestrzeni.
+
+Markup:
+<section class="ourplace">
+    <h2>Nasza kawiarnia</h2>
+        <div class="content-wrapper">
+          <div class="logo">
+            <img src="Media/logoNorthCoffee.png" alt="logo" />
+            <p>Nazwa firmy: North Coffee</p>
+            <p>NIP: 34789127489194719</p>
+            <p>Adres: al. Jakaś 32, Rzeszów</p>
+            <p>Skontaktuj się z nami:</p>
+            <p>tel: 000 000 000</p>
+            <p>lub przez formularz poniżej :)</p>
+          </div>
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5125.585942567638!2d22.00539216978305!3d50.033975027088765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473cfaf83c5a9833%3A0x432f7dd9b86f7a01!2sUniwersytet%20Rzeszowski!5e0!3m2!1spl!2spl!4v1705863079009!5m2!1spl!2spl" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+          </div>
+        </div>
+      </section>
+
+Style guide: 4.2
+*/
+
+.ourplace {
+  padding: 2% 0% 8% 5%;
+  background-color: #48534c;
+  color: #fef7e2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: larger;
+}
+
+.ourplace h2 {
+  font-size: 36px;
+  text-align: center;
+}
+
+.ourplace .content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.ourplace .logo,
+.ourplace .map {
+  flex: 1;
+}
+
+.ourplace .logo img {
+  width: 120px;
+  height: auto;
+}
+
+.ourplace .map iframe {
+  max-width: 80%;
+  max-height: 100%;
+}
+
+/*
+CONTACT contact - sekcja formularza
+
+**.contact**: Element o klasie "contact" ma tło o kolorze #f5f5f5 i wewnętrzny odstęp 50 pikseli na górze i na dole oraz 20 pikseli po bokach. Tekst jest wyśrodkowany.
+
+**.contact h2**: Nagłówek "h2" w sekcji "contact" ma rozmiar czcionki 2.25rem (36 pikseli) i margines dolny równy 20 pikseli.
+
+**.contact form**: Formularz w sekcji "contact" ma maksymalną szerokość 500 pikseli i jest wyśrodkowany na stronie.
+
+**.form-group**: Grupa formularza ma margines dolny równy 20 pikseli.
+
+**label**: Etykiety formularza są wyświetlane jako blokowe elementy z marginesem dolnym równym 5 pikseli.
+
+**input[type="text"], input[type="email"], input[type="date"], textarea, select**: Pola tekstowe, pole email, pole daty, pole tekstowe wieloliniowe i listy rozwijane w formularzu zajmują pełną dostępną szerokość. Mają wewnętrzny odstęp 10 pikseli, margines dolny 10 pikseli oraz obramowanie o grubości 1 piksela i kolorze #ddd.
+
+**#form-group-sex p**: Akapity w grupie formularza "form-group-sex" mają margines dolny równy 5 pikseli.
+
+**input[type="checkbox"]**: Pola wyboru w formularzu mają margines z prawej strony równy 5 pikseli.
+
+**button**: Przycisk w formularzu ma wewnętrzny odstęp 10 pikseli na górze i na dole oraz 20 pikseli po bokach. Tło jest koloru #333, kolor tekstu biały, brak obramowania, a kursor ma postać wskaźnika. Efekt przejścia zmienia tło przycisku po najechaniu kursorem.
+
+**button:hover**: Przy najechaniu kursorem na przycisk, tło przycisku zmienia się na kolor #555.
+
+**@media (max-width: 966px)**:
+
+**.contact form**: W zapytaniu medialnym dla szerokości ekranu do 480 pikseli, szerokość formularza kontaktowego jest zmniejszona do 90% szerokości, aby lepiej dostosować się do mniejszych ekranów.
+
+
+Markup:
+<section class="contact">
+        <h2>Formularz</h2>
+        <form>
+          <div class="form-group">
+            <label for="name">Imię:</label>
+            <input type="text" id="name" name="name" placeholder="Twoje imię" required />
+          </div>
+          <div class="form-group">
+            <label for="surname">Nazwisko:</label>
+            <input type="text" id="surname" name="surname" placeholder="Twoje nazwisko" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <inpu type="email id="email name="email placeholder="Twój email require />
+          </div>
+          <div class="form-group">
+            <label for="date">Data urodzenia:</label>
+            <input type="date" id="date" name="date" />
+          </div>
+          <div class="form-group">
+            <label for="category">Kategoria:</label>
+            <select id="category" name="category">
+              <option value="">--Wybierz opcję--</option>
+              <option value="kawa">Kawa</option>
+              <option value="herbata">Herbata</option>
+              <option value="ciastko">Ciastko</option>
+            </select>
+          </div>
+          <div class="form-group" id="form-group-sex">
+            <p>Płeć:</p>
+            Mężczyzna<input type="radio" id="male" name="gender" value="male" />
+            Kobieta<input type="radio" id="female" name="gender" value="female" />
+          </div>
+          <div class="form-group">
+            <label for="message">Wiadomość:</label>
+            <textarea id="message" name="message" placeholder="Twoja wiadomość" required ></textarea>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="subscribe" name="subscribe" />
+            <label for="subscribe">Subskrybuj newsletter</label>
+          </div>
+          <div class="form-group">
+            <button type="submit">Wyślij</button>
+          </div>
+        </form>
+      </section>
+
+Style guide: 4.3
+*/
+
+.contact {
+  background: #f5f5f5;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.25rem;
+  margin-bottom: 20px;
+}
+
+.contact form {
+  max-width: 500px;
+  margin: auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+#form-group-sex p {
+  margin-bottom: 5px;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #555;
+}
+
+/*
+CONTACT footer - stópka strony
+
+**.footer-at-bottom**: Element o klasie "footer-at-bottom" ma tło o kolorze #fff5e6, kolor tekstu #3c3c3b oraz wewnętrzny odstęp 20 pikseli. Tekst jest wyśrodkowany, a margines górny jest automatycznie dostosowywany.
+
+**.footer-at-bottom img**: Obrazki w stopce strony mają szerokość 3em i margines prawy równy 20 pikseli.
+
+Markup:
+<footer class="footer-at-bottom">
+  <a href=""><img src="Media/SocialMedia/instagram.png" alt="instagram"></a>
+  <a href=""><img src="Media/SocialMedia/facebook.png" alt="facebook"></a>
+  <a href=""><img src="Media/SocialMedia/tiktok.png" alt="tiktok"></a>
+  <a href=""><img src="Media/SocialMedia/twitter.png" alt="twitter"></a>
+  <p>© 2024 North Coffee. Wszelkie prawa zastrzeżone.</p>
+</footer>
+
+Style guide: 4.4
+*/
+
+.footer-at-bottom {
+  background-color: #fff5e6;
+  color: #3c3c3b;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-at-bottom img {
+  width: 3em;
+  margin-right: 20px;
+}
+
+@media (max-width: 966px) {
+  .nav-right {
+    flex-direction: column;
+  }
+  .logo img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  .contact form {
+    width: 90%;
+  }
+}

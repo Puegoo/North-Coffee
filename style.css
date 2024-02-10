@@ -156,7 +156,6 @@ main {
 .review-content {
   display: flex;
   align-items: center;
-  text-align: left;
 }
 
 .review-image-container {
@@ -171,7 +170,6 @@ main {
 
 .review-text {
   flex: 2;
-  text-align: left;
 }
 
 .review-text p {
@@ -287,7 +285,7 @@ main {
   .logo img {
     width: 100px;
   }
-  .hero h1, .hero-gallery h1, .hero-contact h1 {
+  .hero h1 {
     font-size: 5vw;
   }
   .articles-image-container, .review-content{
@@ -299,52 +297,10 @@ main {
   .review-image-container, .review-text {
     width: 100%;
   }
-  .about img, .ourplace {
+  .about img{
     max-width: 50%;
   }
   .contact form {
     width: 90%;
-  }
-  .carusel {
-    max-width: 100%;
-  }
-  .images-wrapper{
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-  .nav-menu-icon {
-    display: block;
-    cursor: pointer;
-  }
-  .nav-menu-icon span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s;
-    background-color: #333;
-  }
-  .nav-menu-icon.active span:nth-of-type(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  .nav-menu-icon.active span:nth-of-type(2) {
-    opacity: 0;
-  }
-  .nav-menu-icon.active span:nth-of-type(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-  nav ul.collapsed {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-  }
-  nav ul.collapsed li {
-    margin-bottom: 10px;
   }
 }
