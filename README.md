@@ -1,127 +1,138 @@
-# North Coffee ☕ - Blog o Kawie
+# North Coffee ☕ - Coffee Blog
 
-![Logo North Coffee](Docs/Images/logo.png)
+![North Coffee Logo](Docs/Images/logo.png)
 
-## Spis treści
-- [Opis projektu](#opis-projektu)
-- [Struktura projektu](#struktura-projektu)
-- [Funkcjonalność](#funkcjonalność)
-- [Responsywność](#responsywność)
-- [Technologie](#technologie)
-- [Instalacja i uruchomienie](#instalacja-i-uruchomienie)
-- [Testowanie](#testowanie)
-- [Autorzy](#autorzy)
-- [Licencja](#licencja)
+## Table of Contents
 
-## Opis projektu
+* [Project Description](#project-description)
+* [Project Structure](#project-structure)
+* [Functionality](#functionality)
+* [Responsiveness](#responsiveness)
+* [Technologies](#technologies)
+* [Installation and Running](#installation-and-running)
+* [Testing](#testing)
+* [Authors](#authors)
+* [License](#license)
 
-North Coffee to responsywna strona internetowa przedstawiająca blog o kawie. Projekt zawiera kilka podstron, w tym stronę główną, artykuły, galerię zdjęć oraz formularz kontaktowy. Strona została zaprojektowana zgodnie z najlepszymi praktykami, posiada pełną responsywność i została zoptymalizowana pod kątem wydajności i SEO.
+## Project Description
 
-![Strona główna](Docs/Images/home.png)
+North Coffee is a responsive website featuring a coffee blog. The project includes several subpages, such as the home page, articles, a photo gallery, and a contact form. The site is designed following best practices, fully responsive, and optimized for performance and SEO.
 
-## Struktura projektu
+![Home Page](Docs/Images/home.png)
 
-Projekt składa się z następujących głównych plików i katalogów:
+## Project Structure
 
-- **Strony HTML**:
- - `index.html` - Strona główna
- - `gallery.html` - Galeria zdjęć
- - `guestbook.html` - Artykuły i księga gości
- - `contact.html` - Formularz kontaktowy
+The project consists of the following main files and directories:
 
-- **Pliki CSS**:
- - `style.css` - Style dla strony głównej
- - `style-gallery.css` - Style dla galerii
- - `style-guest.css` - Style dla artykułów i księgi gości
- - `style-contact.css` - Style dla formularza kontaktowego
+* **HTML Pages**:
 
-- **JavaScript**:
- - `js/script.js` - Skrypt obsługujący księgę gości
+  * `index.html` – Home page
+  * `gallery.html` – Photo gallery
+  * `guestbook.html` – Articles and guestbook
+  * `contact.html` – Contact form
 
-- **Zasoby**:
- - `Media/` - Katalog zawierający obrazy i multimedia
- - `Media/Backgrounds/` - Tła dla poszczególnych sekcji
- - `Media/Articles/` - Zdjęcia artykułów
- - `Media/Gallery/` - Zdjęcia do galerii
- - `Media/SocialMedia/` - Ikony mediów społecznościowych
+* **CSS Files**:
 
-## Funkcjonalność
+  * `style.css` – Styles for the home page
+  * `style-gallery.css` – Styles for the gallery
+  * `style-guest.css` – Styles for articles and guestbook
+  * `style-contact.css` – Styles for the contact form
 
-### Strona główna
-- Przyciągające wzrok interaktywne tło
-- Sekcja najnowszych wpisów z animacjami po najechaniu
-- Recenzje kawiarni z ocenami
-- Sekcja "O mnie"
-- Prosty formularz kontaktowy
-- Popup informujący o plikach cookies
+* **JavaScript**:
 
-![Najnowsze artykuły](Docs/Images/articles.png)
+  * `js/script.js` – Script handling the guestbook
 
-### Artykuły i księga gości
-- Przejrzysty układ artykułów
-- Scrollowalna sekcja wszystkich artykułów
-- Interaktywna księga gości z możliwością dodawania wpisów
-- Przechowywanie wpisów w localStorage
+* **Assets**:
 
-![Księga gości](Docs/Images/guestbook.png)
+  * `Media/` – Directory containing images and multimedia
+  * `Media/Backgrounds/` – Backgrounds for various sections
+  * `Media/Articles/` – Article images
+  * `Media/Gallery/` – Gallery images
+  * `Media/SocialMedia/` – Social media icons
 
-### Galeria
-- Carousel ze zdjęciami kawiarni z różnych krajów
-- Interaktywne kolekcje zdjęć z efektem rozwijania stosu
-- Przejrzysty układ elementów
+## Functionality
 
-![Galeria](Docs/Images/gallery.png)
+### Home Page
 
-### Kontakt
-- Formularz kontaktowy z różnymi typami pól
-- Mapa lokalizacji kawiarni
-- Dane kontaktowe firmy
+* Eye-catching interactive background
+* Latest posts section with hover animations
+* Coffee shop reviews with ratings
+* "About Me" section
+* Simple contact form
+* Cookie consent popup
 
-![Kontakt](Docs/Images/contact.png)
+![Latest Articles](Docs/Images/articles.png)
 
-## Responsywność
+### Articles and Guestbook
 
-Strona została w pełni dostosowana do różnych urządzeń, dzięki zastosowaniu:
-- Elastycznego układu opartego na Flexbox
-- Media queries dla różnych punktów granicznych
-- Skalowania obrazów i tekstu
-- Menu responsywnego dla urządzeń mobilnych
+* Clean layout for articles
+* Scrollable section for all articles
+* Interactive guestbook with entry submission
+* Entries stored in localStorage
 
-![Responsywność](Docs/Images/responsive.png)
+![Guestbook](Docs/Images/guestbook.png)
 
-## Technologie
+### Gallery
 
-Projekt wykorzystuje następujące technologie:
+* Carousel showcasing coffee shop photos from different countries
+* Interactive photo collections with a stack expansion effect
+* Clean layout of gallery items
 
-- HTML5
-- CSS3 (Flexbox, Media Queries)
-- JavaScript (ES6+)
-- LocalStorage API
-- Google Maps Embed API
-- Picsum API (dla księgi gości)
+![Gallery](Docs/Images/gallery.png)
 
-## Instalacja i uruchomienie
+### Contact
 
-1. Sklonuj repozytorium:
+* Contact form with various input fields
+* Embedded map showing the coffee shop location
+* Company contact details
 
-`git clone https://github.com/Puegoo/North-Coffee.git`
+![Contact](Docs/Images/contact.png)
 
-2. Otwórz plik `index.html` w przeglądarce lub uruchom za pomocą serwera lokalnego:
+## Responsiveness
 
-## Testowanie
+The site is fully responsive across devices, achieved through:
 
-Strona została przetestowana pod kątem:
+* Flexible layout using Flexbox
+* Media queries for different breakpoints
+* Scalable images and typography
+* Responsive navigation menu for mobile devices
 
-- **Zgodności z przeglądarkami**: Chrome, Firefox, Safari, Edge
-- **Responsywności**: Testowana na urządzeniach mobilnych, tabletach i desktopach
-- **Walidacji HTML/CSS**: Kod przeszedł walidację W3C
-- **Wydajności**: Osiąga wysokie wyniki w Google PageSpeed Insights
-- **SEO**: Sprawdzona za pomocą Seobility
+![Responsiveness](Docs/Images/responsive.png)
 
-## Autorzy
+## Technologies
 
-Piotr Nowak ([GitHub](https://github.com/Puegoo))
+The project utilizes the following technologies:
 
-## Licencja
+* **HTML5**
+* **CSS3** (Flexbox, Media Queries)
+* **JavaScript (ES6+)**
+* **LocalStorage API**
+* **Google Maps Embed API**
+* **Picsum API** (for the guestbook)
 
-Ten projekt jest dostępny na licencji MIT.
+## Installation and Running
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Puegoo/North-Coffee.git
+   ```
+2. Open `index.html` in your browser or serve via a local server.
+
+## Testing
+
+The site has been tested for:
+
+* **Browser Compatibility**: Chrome, Firefox, Safari, Edge
+* **Responsiveness**: Tested on mobile devices, tablets, and desktops
+* **HTML/CSS Validation**: Passed W3C validation
+* **Performance**: Achieves high scores on Google PageSpeed Insights
+* **SEO**: Checked with Seobility
+
+## Authors
+
+* Piotr Nowak ([GitHub](https://github.com/Puegoo))
+
+## License
+
+This project is licensed under the MIT License.
